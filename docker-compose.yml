@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  pgsql_hangry:
+    container_name: pgsql_hangry
+    image: postgres:12.2
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - pgdata_hangry:/var/lib/postgresql/data
+    networks:
+      - hangry_network
+  hangry_app:
+    build: .
+    entrypoint: npm run dev
+    ports:
+      - 6000:6000
+    networks:
+      - hangry_network
+    depends_on:
+      - pgsql_hangry
+networks:
+  hangry_network:
+volumes:
+  pgdata_hangry:
