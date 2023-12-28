@@ -4,7 +4,7 @@
   "description": "submisi case studi hangry",
   "main": "index.ts",
   "scripts": {
-    "dev" : "npx ts-node index.ts",
+    "dev": "npx ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,6 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^20.10.5",
+    "pg": "^8.11.3",
+    "typeorm": "^0.3.17",
     "typescript": "^5.3.3"
   }
 }

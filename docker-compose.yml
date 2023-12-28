@@ -23,6 +23,7 @@ services:
       - hangry_network
     depends_on:
       - pgsql_hangry
+
 networks:
   hangry_network:
 volumes:

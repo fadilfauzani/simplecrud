@@ -5,3 +5,23 @@ export const response = ( res : http.ServerResponse<http.IncomingMessage>, { dat
     res.end();
 };
 
+
+export const notFoundResponse = (res : http.ServerResponse<http.IncomingMessage>) => {
+    return response(res, {
+        status: 404,
+        data: { message: "requested resource not found!" },
+      }) 
+}
+export const internalServerErrorResponse = (res : http.ServerResponse<http.IncomingMessage>) => {
+    return response(res, {
+        status: 500,
+        data: { message: "error occured!" },
+      }) 
+}
+
+export const badRequestResponse = (res : http.ServerResponse<http.IncomingMessage>) => {
+    return response(res, {
+        status: 400,
+        data: { message: "Bad Request!" }
+    })
+}

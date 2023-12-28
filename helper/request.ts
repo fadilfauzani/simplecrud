@@ -8,7 +8,7 @@ export const getQuery = (req : http.IncomingMessage) =>{
 }
 export const getBody = async (req : http.IncomingMessage) => {
     var body  : any;
-    req.on('data', function(chunk) {
+    await req.on('data', function(chunk) {
         body = JSON.parse(chunk.toString())
     });
 
